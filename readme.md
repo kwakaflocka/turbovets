@@ -1,4 +1,4 @@
-## Development Notes
+## Development Notes: 
 Angular integrated monorepo with esbuild bundler (fastest and simplest)
 and CSS
 No SSR or Static Site Generation (SSG/Prerendering)
@@ -6,31 +6,31 @@ CSR with JWT auth, fast API calls to Nest JS backend,
 responsive UI with state management, role-based UI rendering (show/hide based on permissions)
 NX local caching enabled for fast rebuilds
 Build/test operations are cached automatically
-
 -Was having issues getting Jest test files to work so I pasted my tests for CRUD/RBAC at the bottom
 -npx nx serve api was not working
 Avoided  nx and skipped building, ran TypeScript directly:
 bash
 cd C:\Users\sabri\Documents\GitHub\turbovets-taskmanager\taskmanager\apps\api
 npx ts-node -P tsconfig.app.json src/main.ts
+-.env file is in apps/api
 
 
 # Taskmanager
 
-# 🚀 Task Manager Platform
+# Task Manager Platform
 
 
 A full-stack **Task Management System** built using **NX Monorepo**, featuring a **modern Angular 20 + TailwindCSS frontend**, and a **Node.js + Express backend** with **JWT authentication** and **role-based access control (RBAC)**.  
 All required and bonus features are implemented — including charts, dark mode, keyboard shortcuts, and search.
 
 
-📦 **Repository:** [github.com/kwakaflocka/taskmanager_transfer](https://github.com/kwakaflocka/taskmanager_transfer)
+
 
 
 ---
 
 
-## 🧩 Table of Contents
+## Table of Contents
 
 
 1. [Setup Instructions](#setup-instructions)  
@@ -44,7 +44,7 @@ All required and bonus features are implemented — including charts, dark mode,
 ---
 
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 
 ### 1. Prerequisites
@@ -99,15 +99,15 @@ npm install
 
 
 5. Running the Apps
-🧠 Backend
+Backend
 
 
 npm run api
 
 
 Runs the Express API at
-👉 http://localhost:3000/api
-💻 Frontend
+http://localhost:3000/api
+Frontend
 
 
 npx nx serve dashboard
@@ -151,31 +151,8 @@ Rationale
     Scalability: Future microservices or apps can easily be added under /apps.
 
 
-🧬 Data Model Explanation
-Entity Relationship Diagram (ERD)
-
-
-┌────────────┐     1 ──── *     ┌────────────┐
-│  User      │──────────────────│   Task      │
-│────────────│                  │────────────│
-│ id         │                  │ id          │
-│ name       │                  │ title       │
-│ email      │                  │ description │
-│ role       │                  │ status      │
-│ org_id     │                  │ category    │
-└────────────┘                  │ assigned_to │
-                                └────────────┘
-       │
-       │ 1 ──── *
-       │
-┌────────────┐
-│  Organization │
-│────────────│
-│ id         │
-│ name       │
-│ owner_id   │
-└────────────┘
-
+Data Model Explanation
+Entity Relationship Diagram (ERD): see 'erd-taskmanager.pdf'
 
 Schemas
 
@@ -276,7 +253,7 @@ function authorize(requiredRole: Role) {
 }
 
 
-📡 API Documentation
+API Documentation
 Base URL
 
 
@@ -360,8 +337,8 @@ GET /users
 
 Owner/Admin only
 Returns organization users.
-🔮 Future Considerations
-🧱 Advanced Role Delegation
+Future Considerations
+Advanced Role Delegation
 
 
     Custom role creation (e.g., "Project Manager")
@@ -373,7 +350,7 @@ Returns organization users.
     Permission templates per organization
 
 
-🛡️ Production Security
+Production Security
 
 
     JWT Refresh Tokens for long sessions
@@ -391,7 +368,7 @@ Returns organization users.
     HTTPS & CORS configuration for production
 
 
-⚡ Scaling Permission Checks
+Scaling Permission Checks
 
 
     Centralized AccessPolicyService for evaluating roles
@@ -406,15 +383,11 @@ Returns organization users.
     Future migration to microservices-ready policy engine (e.g., OPA or Casbin)
 
 
-🏁 Conclusion
+Summary
 
 
-✅ Frontend Build Complete
-✅ Backend Securely Integrated
-✅ All Core & Bonus Features Implemented
 
-
-Built with a lotta luv using:
+Built:
 
 
     Angular 20
@@ -432,7 +405,6 @@ Built with a lotta luv using:
     NX Monorepo
 
 
-📦 Repository: https://github.com/kwakaflocka/taskmanager_transfer
 
 
 
